@@ -22,7 +22,7 @@ route.get('/:pid', (req, res) => {
 
 //metodo post para agregar productos al carrito
 route.post('/:id', (req, res) => {
-   
+
 
     const producto = products.find(product => product.id == req.params.id);
   
