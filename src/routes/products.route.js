@@ -25,19 +25,15 @@ route.post('/:id', (req, res) => {
 
 
     const producto = products.find(product => product.id == req.params.id);
-  
     if (!producto) {
       res.status(404).json({ mensaje: 'Producto no encontrado' });
     }
-    const index = productList.findIndex(item => item.id === producto.id);
 
+    const index = productList.findIndex(item => item.id === producto.id);
     if (index !== -1) {
       productList[index].quantity++;
     } else {
-      productList.push({
-        id: producto.id,
-        quantity: 1
-      });
+      productList.push({id: producto.id, quantity: 1});
     }
   
     const productAdded = JSON.stringify(productList, null, 2);
