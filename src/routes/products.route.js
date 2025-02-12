@@ -9,8 +9,7 @@ const productList = []
 
 //metodo get para obtener todos los productos
 route.get('/', (req, res) => {
-    res.send('Hello, it´s the device store');
-    res.render('index');  
+    res.json(products);
 });
 
 
